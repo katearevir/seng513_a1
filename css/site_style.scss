@@ -48,6 +48,15 @@ body {
         }
 }
 
+
+img {
+    max-width: 100%;
+    height: 30%;
+    object-fit: contain;
+    overflow: hidden;
+    margin-top: -15%;
+}
+
 /* mobile */
 @media screen and (max-width: 600px) {
 
