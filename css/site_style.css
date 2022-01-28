@@ -54,7 +54,7 @@ body {
 /* mobile */
 @media screen and (max-width: 600px) {
   #pages {
-    right: -70px;
+    right: -90px;
   }
 }
 /*# sourceMappingURL=site_style.css.map */
