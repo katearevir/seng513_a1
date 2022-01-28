@@ -11,7 +11,7 @@ body {
             float: left;
             color: #f2f2f2;
             text-align: center;
-            font-size: 17px;
+            font-size: 16px;
             padding: 14px 16px;
             text-decoration: none;
         }
@@ -21,10 +21,10 @@ body {
             font-family: "Lucida Handwriting", cursive;
             font-style: bold;
             text-decoration: none;
-            padding-right: 10%;
         }
         
         #pages {
+            font-family: 'Courier New', Courier, monospace;
             list-style-type: none;
             margin: 0;
             padding: 0;
@@ -41,6 +41,7 @@ body {
             }
 
             li a:hover {
+                transition-duration: 0.4s;
                 background-color: rgb(131, 80, 32);
                 height:40px
             }
@@ -49,8 +50,9 @@ body {
 
 /* mobile */
 @media screen and (max-width: 600px) {
+
     #pages {
-        right: -90px;
+        right: -70px;
     }
   }
 
