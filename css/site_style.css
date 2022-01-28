@@ -1,11 +1,14 @@
 body {
   margin: 0;
+  background-color: rosybrown;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #navbar {
   position: relative;
   overflow: hidden;
-  background-color: tan;
+  background-color: #886060;
 }
 
 #navbar a {
@@ -25,7 +28,6 @@ body {
 }
 
 #navbar #pages {
-  font-family: "Courier New", Courier, monospace;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -42,26 +44,24 @@ body {
 }
 
 #navbar #pages li a.active {
-  background-color: #966940;
+  background-color: #5e4646;
   height: 40px;
 }
 
 #navbar #pages li a:hover {
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
-  background-color: #835020;
+  background-color: #745959;
   height: 40px;
 }
 
 h1 {
   padding-top: 1%;
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
-  color: #532a04;
 }
 
 .divider {
-  border-top: 8px solid #532a04;
+  border-top: 8px solid white;
   border-radius: 5px;
   width: 20%;
 }
@@ -78,14 +78,13 @@ h1 {
 /* mobile */
 @media screen and (max-width: 600px) {
   .flex-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     text-align: center;
   }
   .flex-container > div #profPic {
@@ -93,16 +92,17 @@ h1 {
     width: 60%;
   }
   .flex-container > div #intro {
-    font-family: "Courier New", Courier, monospace;
     font-size: 20px;
   }
   .flex-container > div p {
-    font-family: "Courier New", Courier, monospace;
     vertical-align: middle;
     font-size: 20px;
   }
   .flex-container > div p .icon {
     width: 40px;
+  }
+  .flex-container > div img {
+    width: 80%;
   }
   #pages {
     right: -70px;
@@ -127,16 +127,17 @@ h1 {
     width: 400px;
   }
   .flex-container > div #intro {
-    font-family: "Courier New", Courier, monospace;
     font-size: 18px;
   }
   .flex-container > div p {
-    font-family: "Courier New", Courier, monospace;
     vertical-align: middle;
     font-size: 20px;
   }
   .flex-container > div p .icon {
     width: 40px;
+  }
+  .flex-container > div img {
+    width: 400px;
   }
 }
 /*# sourceMappingURL=site_style.css.map */

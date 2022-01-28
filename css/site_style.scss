@@ -1,13 +1,14 @@
-
-$font: 'Courier New', Courier, monospace;
 body {
     margin: 0;
+    background-color: rosybrown;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #navbar { 
     position: relative;
     overflow: hidden;
-    background-color: tan;
+    background-color: rgb(136, 96, 96);
 
         a {
             float: left;
@@ -26,7 +27,6 @@ body {
         }
         
         #pages {
-            font-family: $font;
             list-style-type: none;
             margin: 0;
             padding: 0;
@@ -38,14 +38,14 @@ body {
             width: 100%;
 
             li a.active {
-                background-color: rgb(150, 105, 64);
-                height:40px
+                background-color: rgb(94, 70, 70);
+                height:40px;
             }
 
             li a:hover {
                 transition-duration: 0.4s;
-                background-color: rgb(131, 80, 32);
-                height:40px
+                background-color: rgb(116, 89, 89);
+                height:40px;
             }
         }
 }
@@ -53,14 +53,12 @@ body {
 h1 {
     padding-top: 1%;
     text-align: center;
-    font-family: $font;
-    color:rgb(83, 42, 4)
 }
 
 .divider {
-    border-top: 8px solid rgb(83, 42, 4);
+    border-top: 8px solid rgb(255, 255, 255);
     border-radius: 5px;
-    width: 20%
+    width: 20%;
 }
 
 #main {
@@ -75,26 +73,29 @@ h1 {
 @media screen and (max-width: 600px) {
 
     .flex-container {
-        display: flex;
         flex-direction: column;
-        width: 100%;
+        display: flex;
         text-align: center;
+          
         > div {
             #profPic{
                 padding-top: 10px;
                 width: 60%;
             }
             #intro{
-                font-family: $font;
                 font-size: 20px;
             }
+
             p{
-                font-family: $font;
                 vertical-align: middle;
                 font-size: 20px;
                 .icon{
                     width: 40px;
                 }
+            }
+
+            img {
+                width: 80%;
             }
         }
     }
@@ -123,16 +124,18 @@ h1 {
                 width: 400px;
             }
             #intro{
-                font-family: $font;
                 font-size: 18px;
             }
+
             p{
-                font-family: $font;
                 vertical-align: middle;
                 font-size: 20px;
                 .icon{
                     width: 40px;
                 }
+            }
+            img {
+                width: 400px;
             }
         }
     }
