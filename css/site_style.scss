@@ -55,6 +55,10 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-family: "Lucida Handwriting", cursive;
+}
+
 .divider {
     border-top: 8px solid rgb(255, 255, 255);
     border-radius: 5px;
@@ -69,10 +73,34 @@ h1 {
     margin-top: -15%;
 }
 
-/* mobile */
-@media screen and (max-width: 600px) {
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    .flex-container {
+    .break {
+        flex-basis: 100%;
+        height: 0;
+      }
+    
+    > div {
+        width: 360px;
+        //background-color: aqua;
+        text-align: center;
+        img {
+            width: 100%;
+        }
+        //line-height: 75px;
+       // font-size: 30px;
+    }
+
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+
+    .flex-container-center {
         flex-direction: column;
         display: flex;
         text-align: center;
@@ -108,9 +136,34 @@ h1 {
 }
 
 /*widescreen*/
-@media screen and (min-width: 600px) {
-
+@media screen and (min-width: 768px) {
     .flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    
+        .break {
+            flex-basis: 100%;
+            height: 0;
+          }
+        
+        > div {
+            margin: 10px;
+            width: 560px;
+            //background-color: aqua;
+            text-align: center;
+            iframe {
+                width: 560px;
+            }
+            //line-height: 75px;
+           // font-size: 30px;
+        }
+    
+    }
+
+    .flex-container-center {
         display: flex;
         flex-direction: column;
         width: 100%;
