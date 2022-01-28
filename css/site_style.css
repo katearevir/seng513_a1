@@ -1,1 +1,60 @@
-/* No CSS *//*# sourceMappingURL=site_style.css.map */
+body {
+  margin: 0;
+}
+
+#navbar {
+  position: relative;
+  overflow: hidden;
+  background-color: tan;
+}
+
+#navbar a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  font-size: 17px;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#navbar #logo {
+  text-align: center;
+  font-family: "Lucida Handwriting", cursive;
+  font-style: bold;
+  text-decoration: none;
+  padding-right: 10%;
+}
+
+#navbar #pages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  padding-left: 0px;
+  height: 40px;
+  width: 100%;
+}
+
+#navbar #pages li a.active {
+  background-color: #aa6422;
+  height: 40px;
+}
+
+#navbar #pages li a:hover {
+  background-color: #835020;
+  height: 40px;
+}
+
+/* mobile */
+@media screen and (max-width: 600px) {
+  #pages {
+    right: -70px;
+  }
+}
+/*# sourceMappingURL=site_style.css.map */
