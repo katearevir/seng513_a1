@@ -3,6 +3,14 @@ body {
   background-color: rosybrown;
   color: white;
   font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 100px;
+}
+
+.footer {
+  background-color: #886060;
+  text-align: center;
+  padding: 15px;
+  margin-top: 90px;
 }
 
 #navbar {
@@ -13,7 +21,7 @@ body {
 
 #navbar a {
   float: left;
-  color: #f2f2f2;
+  color: white;
   text-align: center;
   font-size: 16px;
   padding: 14px 16px;
@@ -77,6 +85,41 @@ h2 {
   overflow: hidden;
 }
 
+.portList ul {
+  margin: 0px;
+  padding-left: 10%;
+  list-style-type: none;
+}
+
+.portList ul a {
+  text-decoration: none;
+}
+
+.portList ul h3, .portList ul p {
+  color: white;
+}
+
+.portList ul h3 {
+  text-align: center;
+  font-size: 25px;
+}
+
+.portList ul li:hover {
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  background-color: #745959;
+}
+
+.portList ul li img {
+  width: 100%;
+}
+
+.portList ul li {
+  width: 90%;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
 .flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -110,6 +153,9 @@ h2 {
 
 /* mobile */
 @media screen and (max-width: 768px) {
+  #pages {
+    right: -70px;
+  }
   .flex-container-center {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -137,13 +183,26 @@ h2 {
   .flex-container-center > div img {
     width: 80%;
   }
-  #pages {
-    right: -70px;
-  }
 }
 
 /*widescreen*/
 @media screen and (min-width: 768px) {
+  #pages {
+    right: 0;
+  }
+  .portList ul li img {
+    float: left;
+    padding-right: 10px;
+    width: 20%;
+  }
+  .portList ul li {
+    margin-top: 10px;
+    width: 90%;
+    overflow: auto;
+  }
+  .portList ul p {
+    font-size: 20px;
+  }
   .flex-container {
     display: -webkit-box;
     display: -ms-flexbox;

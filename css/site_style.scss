@@ -1,8 +1,20 @@
+$baseColor: rosybrown;
+$hoverColor: rgb(116, 89, 89);
+$activeColor: rgb(94, 70, 70);
+
 body {
     margin: 0;
     background-color: rosybrown;
     color: white;
     font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 100px;
+}
+
+.footer {
+    background-color: rgb(136, 96, 96);
+    text-align: center;
+    padding: 15px;
+    margin-top: 90px;
 }
 
 #navbar { 
@@ -12,7 +24,7 @@ body {
 
         a {
             float: left;
-            color: #f2f2f2;
+            color: white;
             text-align: center;
             font-size: 16px;
             padding: 14px 16px;
@@ -37,14 +49,15 @@ body {
             height: 40px;
             width: 100%;
 
+
             li a.active {
-                background-color: rgb(94, 70, 70);
+                background-color: $activeColor;
                 height:40px;
             }
 
             li a:hover {
                 transition-duration: 0.4s;
-                background-color: rgb(116, 89, 89);
+                background-color: $hoverColor;
                 height:40px;
             }
         }
@@ -71,6 +84,41 @@ h2 {
     overflow: hidden;
 }
 
+.portList {
+    ul {
+        margin: 0px;
+        padding-left: 10%;
+        list-style-type: none;
+
+        a {
+            text-decoration: none;
+        }
+
+        h3,p {
+            color: white;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        li:hover {
+            transition-duration: 0.4s;
+            background-color: $hoverColor;
+        }
+
+        li img {
+            width: 100%;
+        }
+
+        li{
+            width: 90%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+    }
+}
+
 .flex-container {
     display: flex;
     flex-direction: column;
@@ -84,20 +132,19 @@ h2 {
     
     > div {
         width: 360px;
-        //background-color: aqua;
         text-align: center;
         img {
             width: 100%;
         }
-        //line-height: 75px;
-       // font-size: 30px;
     }
 
 }
 
 /* mobile */
 @media screen and (max-width: 768px) {
-
+    #pages {
+        right: -70px;
+    }
     .flex-container-center {
         flex-direction: column;
         display: flex;
@@ -125,16 +172,37 @@ h2 {
             }
         }
     }
-
-    #pages {
-        right: -70px;
-    }
-
-    
 }
 
 /*widescreen*/
 @media screen and (min-width: 768px) {
+    #pages {
+        right: 0;
+    }
+    .portList {
+        ul {
+
+            
+            li img {
+                float: left;
+                padding-right: 10px;
+                width: 20%;
+            }
+    
+            li{
+                margin-top: 10px;
+                width: 90%;
+                overflow: auto;
+            }
+
+            p {
+                font-size: 20px;
+            }
+    
+            
+        }
+    }
+
     .flex-container {
         display: flex;
         flex-direction: row;
@@ -150,13 +218,10 @@ h2 {
         > div {
             margin: 10px;
             width: 560px;
-            //background-color: aqua;
             text-align: center;
             iframe {
                 width: 560px;
             }
-            //line-height: 75px;
-           // font-size: 30px;
         }
     
     }
