@@ -56,6 +56,9 @@ function getStats(txt) {
     //nLines
     let lineArr = txt.split(/\r|\n/);
     let nLines = lineArr.length;
+    if (lineArr.length == 1 && nChars == 0){
+        nLines = 0;
+    }
 
     //nNonEmptyLines
     //split by newline
@@ -74,7 +77,12 @@ function getStats(txt) {
     for (let word of wordsArr){
         avgWordLength += word.length;
     }
+    
     avgWordLength /= nWords;
+
+    if (nWords == 0){
+        avgWordLength = 0.0;
+    }
 
     //maxLineLength
     let maxLineLength = 0;
@@ -87,9 +95,17 @@ function getStats(txt) {
 
     //tenLongestWords
     let sortedWords = wordsArr;
-    //https://stackoverflow.com/questions/44554122/how-to-sort-by-length-and-then-alphabetically
     sortedWords.sort(function(a, b) {
-        return b.length - a.length || a.localeCompare(b);
+        if (a.length === b.length)
+        {
+            if (/\d/.test(a) && /\w/.test(b)) //if a is a number and b is a word
+                return 1;
+            else if (/\d/.test(b) && /\w/.test(a)) //if b is a number and a is a word
+                return -1;
+            else if (/\w/.test(a) && /\w/.test(b))
+                return a.localeCompare(b);
+        }
+        else return b.length - a.length;
       });
 
     //remove duplicates
@@ -101,14 +117,62 @@ function getStats(txt) {
 
     sortedWords = removeDuplicates(sortedWords);
 
+    //get ten longest words
     let tenLongestWords = [];
-    let i = 0;
-    while (i < 10 && i < sortedWords.length){
-        tenLongestWords.push(sortedWords[i]);
-        i++;
+    let j = 0;
+    while (j < 10 && j < sortedWords.length){
+        if (/\w/.test(sortedWords[j]))
+            tenLongestWords.push(sortedWords[j].toLowerCase());
+        else
+            tenLongestWords.push(sortedWords);
+        j++;
     }
     
     //tenMostFrequentWords
+    
+    //sort words alphabetically
+    sortedWords = wordsArr.sort();
+
+    //count words
+    let currWord = sortedWords[0];
+    let count = 0;
+    let freqArray = [];
+    for (let i = 0; i < sortedWords.length; i++){
+        if (currWord === sortedWords[i])
+            count++;
+        else{
+            freqArray.push([currWord, count]);
+            currWord = sortedWords[i];
+            count = 1;
+        }
+    }
+    //for last word
+    freqArray.push([currWord, count]);
+
+    //sort array by the second element in descending order
+    freqArray = freqArray.sort(function(a, b){
+        if (a[1] === b[1])
+        {
+            if (/\d/.test(a[0]) && /\w/.test(b[0]))
+                return 1;
+            if (/\d/.test(b[0]) && /\w/.test(a[0]))
+                return -1;
+            else return a[0].localeCompare(b[0]);
+        }
+            
+        return b[1] - a[1];
+    });
+
+    j = 0;
+    let tenMostFrequentWords = [];
+    //get ten most frequent words
+    while (j < 10 && j < freqArray.length){
+        tenMostFrequentWords.push(freqArray[j][0] + "(" + freqArray[j][1] + ")");
+        j++;
+    }
+
+    if (nWords == 0)
+        tenMostFrequentWords = [];
 
     return {
         nChars: nChars,                                                     
@@ -118,7 +182,7 @@ function getStats(txt) {
         averageWordLength: avgWordLength,
         maxLineLength: maxLineLength,
         tenLongestWords: tenLongestWords,
-        tenMostFrequentWords: ["Hello(1)", "World(1)", "77(1)"]
+        tenMostFrequentWords: tenMostFrequentWords
     };
 
 }
