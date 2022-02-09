@@ -1,29 +1,17 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url("Montserrat-VariableFont_wght.ttf");
+}
+
 body {
   margin: 0;
   background-color: rosybrown;
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 100px;
 }
 
-table {
-  margin-top: 10px;
-  width: 90%;
-}
-
-th {
-  background-color: #a36a6a;
-}
-
-td {
-  background-color: #794e58;
-}
-
-th, td {
-  padding: 10px;
-  border: 0px;
-}
-
+/*Footer styling*/
 .footer {
   background-color: #886060;
   text-align: center;
@@ -31,6 +19,7 @@ th, td {
   margin-top: 150px;
 }
 
+/*Navigation Bar styling*/
 #navbar {
   position: relative;
   overflow: hidden;
@@ -81,21 +70,39 @@ th, td {
   height: 40px;
 }
 
-h1 {
-  padding-top: 1%;
+/*Title/Header styling for pages other than homepage*/
+.header-image {
+  width: 100%;
+  -webkit-filter: blur(1.5px);
+          filter: blur(1.5px);
+  height: 100%;
+}
+
+.header-container {
+  position: relative;
   text-align: center;
 }
 
-h2 {
-  font-family: "Lucida Handwriting", cursive;
+.header-container > h1 {
+  position: absolute;
+  font-size: 28px;
+  background-color: rgba(148, 96, 96, 0.6);
+  border: 3px solid #f1f1f1;
+  padding: 10px;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
+/*Divider after header in About, Courses, Hobbies, and Portfolio*/
 .divider {
   border-top: 8px solid white;
   border-radius: 5px;
   width: 20%;
 }
 
+/*Image in homepage*/
 #main {
   max-width: 100%;
   -o-object-fit: contain;
@@ -103,6 +110,7 @@ h2 {
   overflow: hidden;
 }
 
+/*portfolio list styling*/
 .portList ul {
   margin: 0px;
   padding-left: 10%;
@@ -139,6 +147,26 @@ h2 {
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
+/*Table Styling*/
+table {
+  margin-top: 10px;
+  width: 90%;
+}
+
+table th {
+  background-color: #a36a6a;
+}
+
+table td {
+  background-color: #794e58;
+}
+
+th, td {
+  padding: 10px;
+  border: 0px;
+}
+
+/*Flex Container used for Courses and Hobbies*/
 .flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,6 +203,7 @@ h2 {
   #pages {
     right: -70px;
   }
+  /*Flex Container used for About*/
   .flex-container-center {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -212,6 +241,15 @@ h2 {
   }
   #pages {
     right: 0;
+  }
+  .header-container {
+    position: relative;
+    text-align: center;
+  }
+  .header-container > h1 {
+    top: 40%;
+    padding: 30px;
+    font-size: 40px;
   }
   th, td {
     padding: 20px;
@@ -259,6 +297,7 @@ h2 {
   .flex-container > div iframe {
     width: 560px;
   }
+  /*Flex Container used for About*/
   .flex-container-center {
     display: -webkit-box;
     display: -ms-flexbox;

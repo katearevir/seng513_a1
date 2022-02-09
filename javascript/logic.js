@@ -3,6 +3,9 @@
 
 
 function getStats(txt) {
+
+    //Reference used for regexp: https://www.w3schools.com/js/js_regexp.asp
+
     //nChars
     let nChars = txt.length;
 
@@ -141,9 +144,9 @@ function getStats(txt) {
         if (currWord === sortedWords[i])
             count++;
         else{
-            freqArray.push([currWord, count]);
-            currWord = sortedWords[i];
-            count = 1;
+            freqArray.push([currWord, count]); //put in array
+            currWord = sortedWords[i]; //change current word
+            count = 1; //reset counter
         }
     }
     //for last word
@@ -159,7 +162,6 @@ function getStats(txt) {
                 return -1;
             else return a[0].localeCompare(b[0]);
         }
-            
         return b[1] - a[1];
     });
 

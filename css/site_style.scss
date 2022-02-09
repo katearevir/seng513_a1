@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-VariableFont_wght.ttf')
+}
+
 $baseColor: rosybrown;
 $hoverColor: rgb(116, 89, 89);
 $activeColor: rgb(94, 70, 70);
@@ -6,26 +11,11 @@ body {
     margin: 0;
     background-color: rosybrown;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 100px;
 }
 
-table {
-    margin-top: 10px;
-    width: 90%;
-}
-
-th {
-    background-color: rgb(163, 106, 106);
-}
-td {
-    background-color: rgb(121, 78, 88);
-}
-th, td {
-    padding: 10px;
-    border: 0px;
-}
-
+/*Footer styling*/
 .footer {
     background-color: rgb(136, 96, 96);
     text-align: center;
@@ -33,6 +23,7 @@ th, td {
     margin-top: 150px;
 }
 
+/*Navigation Bar styling*/
 #navbar { 
     position: relative;
     overflow: hidden;
@@ -79,27 +70,45 @@ th, td {
         }
 }
 
-h1 {
-    padding-top: 1%;
+
+/*Title/Header styling for pages other than homepage*/
+.header-image{
+    width: 100%;
+    filter: blur(1.5px);
+    height: 100%;
+}
+
+.header-container{
+    position: relative;
     text-align: center;
+
+    > h1 {
+        position: absolute;
+        font-size: 28px;
+        background-color: rgba(148, 96, 96, 0.6);
+        border: 3px solid #f1f1f1;
+        padding: 10px;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
-h2 {
-    font-family: "Lucida Handwriting", cursive;
-}
-
+/*Divider after header in About, Courses, Hobbies, and Portfolio*/
 .divider {
     border-top: 8px solid rgb(255, 255, 255);
     border-radius: 5px;
     width: 20%;
 }
 
+/*Image in homepage*/
 #main {
     max-width: 100%;
     object-fit: contain;
     overflow: hidden;
 }
 
+/*portfolio list styling*/
 .portList {
     ul {
         margin: 0px;
@@ -136,6 +145,25 @@ h2 {
     }
 }
 
+/*Table Styling*/
+table {
+    margin-top: 10px;
+    width: 90%;
+    th {
+        background-color: rgb(163, 106, 106);
+    }
+    td {
+        background-color: rgb(121, 78, 88);
+    }
+}
+
+th, td {
+    padding: 10px;
+    border: 0px;
+}
+
+
+/*Flex Container used for Courses and Hobbies*/
 .flex-container {
     display: flex;
     flex-direction: column;
@@ -162,6 +190,8 @@ h2 {
     #pages {
         right: -70px;
     }
+
+    /*Flex Container used for About*/
     .flex-container-center {
         flex-direction: column;
         display: flex;
@@ -193,39 +223,50 @@ h2 {
 
 /*widescreen*/
 @media screen and (min-width: 768px) {
+
     #navbar {
         a {
             font-size: 16px;
             padding: 14px 16px;
         }
     }
+
     #pages {
         right: 0;
     }
+
+    .header-container{
+        position: relative;
+        text-align: center;
+        > h1 {
+            top: 40%;
+            padding: 30px;
+            font-size: 40px;
+        }
+    }
+
     th, td {
         padding: 20px;
     }
+
     .portList {
         ul {
 
-            
             li img {
                 padding: 8px;
                 float: left;
                 width: 30%;
             }
-    
+
             li{
                 margin-top: 10px;
                 width: 90%;
                 overflow: auto;
             }
-
             p {
                 font-size: 20px;
             }
-    
-            
+ 
         }
     }
 
@@ -252,6 +293,7 @@ h2 {
     
     }
 
+    /*Flex Container used for About*/
     .flex-container-center {
         display: flex;
         flex-direction: row;
@@ -281,7 +323,6 @@ h2 {
             }
         }
     }
-    
 }
 
 
