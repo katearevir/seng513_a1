@@ -72,6 +72,7 @@ body {
 
 
 /*Title/Header styling for pages other than homepage*/
+//Reference for centering image on text: https://www.w3schools.com/howto/howto_css_image_text.asp
 .header-image{
     width: 100%;
     filter: blur(1.5px);
@@ -86,7 +87,7 @@ body {
         position: absolute;
         font-size: 28px;
         background-color: rgba(148, 96, 96, 0.6);
-        border: 3px solid #f1f1f1;
+        border: 3px solid white;
         padding: 10px;
         top: 30%;
         left: 50%;
@@ -102,13 +103,14 @@ body {
 }
 
 /*Image in homepage*/
+//Reference for fitting image https://www.w3schools.com/css/css3_object-fit.asp
 #main {
     max-width: 100%;
     object-fit: contain;
     overflow: hidden;
 }
 
-/*portfolio list styling*/
+/*Portfolio list styling*/
 .portList {
     ul {
         margin: 0px;
@@ -164,6 +166,7 @@ th, td {
 
 
 /*Flex Container used for Courses and Hobbies*/
+//Reference for item centering https://www.w3schools.com/css/css3_flexbox_container.asp
 .flex-container {
     display: flex;
     flex-direction: column;
