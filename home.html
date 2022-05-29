@@ -22,10 +22,36 @@
         </ul>
     </div>
 
-    <img id="main" src="images/welcome.gif">
+    <div>
+        <img id="main" src="images/gradient.jpg">
+        <div id="title" style="position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); font-size: 50px; ">
+        </div>
+    </div>
+    
 
-    <div class="footer">
+    <div class="footer" style="margin:0;">
         <p>Kate Rivera Portfolio</p>
     </div>
 </body>
+
+<script>
+    //https://www.w3schools.com/howto/howto_js_typewriter.asp
+    var i = 0;
+    var txt = 'Welcome to my website!'; /* The text */
+    var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+    function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("title").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    typeWriter();
+    
+</script>
 </html>
