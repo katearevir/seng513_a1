@@ -15,6 +15,15 @@ body {
     margin-bottom: 100px;
 }
 
+#title{
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        font-size: 50px;
+  }
+  
+
 /*Footer styling*/
 .footer {
     background-color: rgb(136, 96, 96);
@@ -191,6 +200,12 @@ th, td {
 
 /* mobile */
 @media screen and (max-width: 768px) {
+
+    #title{
+        top: 20%;
+        font-size: 40px;
+  }
+
     #navbar{
         #logo{
             opacity: 0;
@@ -242,6 +257,14 @@ th, td {
             padding: 14px 16px;
         }
     }
+
+    #title{
+        position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            font-size: 50px;
+      }
 
     #pages {
         right: 0;
